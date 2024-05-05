@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: black;
+    color: transparent;
 }
 
 .header{
@@ -48,6 +48,9 @@ body{
     padding: 0 10%;
     display: flex;
     align-items: center;
+    background: url("https://static.vecteezy.com/system/resources/thumbnails/009/160/512/small/abstract-background-with-gradient-color-and-dynamic-shadow-on-background-background-for-wallpaper-eps-10-free-vector.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .home-content{
