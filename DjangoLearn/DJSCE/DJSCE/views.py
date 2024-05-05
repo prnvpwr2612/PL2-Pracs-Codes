@@ -12,3 +12,9 @@ def CourseID(request, courseid):
 
 def Harsh(request):
     return render(request,"index.html")
+
+def Harsh2(request):
+    data= {
+        'title':'Home Page'
+    }
+    return render(request,"index.html")
