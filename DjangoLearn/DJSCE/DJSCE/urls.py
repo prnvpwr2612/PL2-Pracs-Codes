@@ -23,5 +23,5 @@ urlpatterns = [
     path('welcome/', views.welcome),
     path('course/', views.Course),
     path('course/<slug:courseid>', views.CourseID),
-    path('index/',views.Harsh)
+    path('',views.Harsh)
 ]
