@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('welcome/', views.welcome),
     path('course/', views.Course),
-    path('course/<int:courseid>', views.CourseID),
+    path('course/<slug:courseid>', views.CourseID),
+    path('index/',views.Harsh)
 ]

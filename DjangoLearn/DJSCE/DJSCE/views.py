@@ -7,5 +7,8 @@ def welcome(request):
 def Course(request):
     return HttpResponse("<b>Course</b>")
 
-def CourseID(request, courseID):
-    return HttpResponse(courseID)
+def CourseID(request, courseid):
+    return HttpResponse(courseid)
+
+def Harsh(request):
+    return render(request,"index.html")
