@@ -21,4 +21,6 @@ from DJSCE import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('welcome/', views.welcome),
+    path('course/', views.Course),
+    path('course/<int:courseid>', views.CourseID),
 ]
