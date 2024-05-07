@@ -6,3 +6,9 @@ class Employee(models.Model):
     address = models.CharField(max_length=100)
     salary = models.IntegerField()
     Department = models.CharField(max_length=25)
+
+class Student(models.Model):
+    SAP_ID=models.IntegerField()
+    Name=models.CharField(max_length=50)
+    Department = models.CharField(max_length=100)
+
