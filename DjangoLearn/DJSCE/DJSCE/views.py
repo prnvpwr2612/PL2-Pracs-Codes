@@ -10,9 +10,8 @@ def Course(request):
 def CourseID(request, courseid):
     return HttpResponse(courseid)
 
-
 def HomePage(request):
     data= {
-        'title':'Home Page'
+        'title':"Hi! It's Pranav here."
     }
-    return render(request,"index.html",)
+    return render(request,"index.html",data)
