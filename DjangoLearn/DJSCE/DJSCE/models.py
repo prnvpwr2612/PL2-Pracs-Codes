@@ -11,4 +11,3 @@ class Student(models.Model):
     SAP_ID=models.IntegerField()
     Name=models.CharField(max_length=50)
     Department = models.CharField(max_length=100)
-
