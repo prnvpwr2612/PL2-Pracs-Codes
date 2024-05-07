@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-STATICFILE_DIR=[
+STATICFILE_DIRS=[
     BASE_DIR, "Static"
     ]
 
