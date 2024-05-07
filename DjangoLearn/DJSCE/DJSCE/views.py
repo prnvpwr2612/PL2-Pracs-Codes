@@ -12,6 +12,6 @@ def CourseID(request, courseid):
 
 def HomePage(request):
     data= {
-        'title':"Hi! It's Pranav here."
+        'title':"Portfolio|Pranav Pawar"
     }
     return render(request,"index.html",data)
