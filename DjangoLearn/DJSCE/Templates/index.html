@@ -1,151 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login Page</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<style>
-    body {
-        
-        background-image: url("static/bgimg.png");
-       
-        background-size: cover;
-        background-position: center;
-       
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
-    
-    .login-container {
-        width: 300px;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px  rgba(224, 9, 9, 0.1);
-        background-color: #ffffff; 
-        
-        opacity: 0.9;
-        /* animation hain  yeh */
-        animation-name: fadeInUp;
-        animation-duration: 1s;
-        animation-fill-mode: both;
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(150px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    label {
-        display: block;
-        margin-bottom: 5px;
-       
-        transition: transform 0.3s ease-in-out;
-    }
-    
-    input[type="email"],
-    input[type="password"],
-    button[type="submit"] {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        box-sizing: border-box; 
-       /*Annimation hain yeh timen ka*/
-        transition: border-color 0.3s ease-in-out;
-    }
-    
-    input[type="email"]:focus,
-    input[type="password"]:focus {
-        border-color: #84db20; 
-    }
-    
-    button[type="submit"] {
-        background-color: #2013d1;
-        color: white;
-        cursor: pointer;
-        
-        transition: background-color 0.3s ease-in-out;
-    }
-    
-    button[type="submit"]:hover {
-        background-color: #45a049;
-    }
-    
-    p {
-        margin-top: 20px;
-        text-align: center;
-    }
-    .error-message {
-        color: red;
-        font-size: 14px;
-        margin-top: 5px;
-    }
-</style>
-</head>
-<body>
-
-<div class="login-container">
-    <h1>HR</h1>
-    <h2>Login Page</h2>
-    <form id="loginForm" onsubmit="return handleSubmit(event)" >
-        {% csrf_token %}
-        <label for="email">Email:</label>
-        <input type="email" id="email" name='email' placeholder="admin@gmail.com">
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name='password' placeholder="Enter Password">
-        <p class="error-message" id="errorMessage"></p>
-        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-        <button type="submit">Log in</button>
-    </form>
-</div>
-
-<script>
-    function handleSubmit(event) {
-        event.preventDefault(); 
-        
-        // Get email and password values
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        // Make AJAX request to Django backend
-        $.ajax({
-            url: '/',
-            method: 'POST',
-            headers: {
-                'X-CSRFToken': $('input[name="csrfmiddlewaretoken"]').val()
-            },
-            data: { email: email, password: password },
-            success: function(response) {
-                // If login successful, redirect to profile page
-                if (response.success) {
-                    window.location.href = 'profile.html';
-                } else {
-                    // Show error message in alert
-                    alert(response.error_message);
-                    document.getElementById('email').value = '';
-                    document.getElementById('password').value = '';
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error(error);
-            }
-        });
-        
-        return false; 
-    }
-</script>
-</body>
+<html>
+    <head>
+        <title>
+            Hello! It's Pranav here:)
+        </title>
+        <meta charset="UTF-8">
+        <meta name="Pranav Pawar" content="Profile">
+    </head>
+    <body style="background-color: black; color: white; background-image: url('https://www.miguelclaro.com/wp/wp-content/uploads/2013/07/UrsaMajorAirGlowMourao-net.jpg');  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        <h1 style="text-align: center;">
+            Pranav Pawar
+        </h1>
+        <p style="text-align: center;">
+            <b>+91 88795 13185 |   <a href="https://github.com/prnvpwr2612">Github</a> |    <a href="https://www.linkedin.com/in/pranav-pawar-05b962258/">LinkedIn</a> |    <a href="https://www.instagram.com/prnvpwr2612/">Instagram</a></b>
+        </p>
+        <b></b>
+        <h2 style="font-size: large;">
+            Education
+        </h2>
+        <p>
+            <ul">
+                <li>School: SVKM's CNM School, Vile Parle(West)</li>
+                <li>Junior College: Prakash College of Science & Commerce, Kandivali(West)</li>
+                <li><i>B. Tech in Artificial Intelligence(AI) & Data Science</i>, SVKM's Dwarkadas Jivanlal College of Engineering, Vile Parle(West)</li>
+            </ul>
+        </p>
+        <b></b>
+        <h3 style="font-size: large;">
+            Skills
+        </h3>
+        <p>
+            <ol>
+                <li>Languages
+                    <ul style="font-size: small; text-align: left;">
+                        <li>Python</li>
+                        <li>C</li>
+                        <li>HTML</li>
+                        <li>R</li>
+                        <li>Java</li>
+                    </ul>
+                </li>
+                <li>Frameworks/Libraries
+                    <ul style="font-size: small; text-align: left;">
+                        <li>Tensorflow</li>
+                        <li>Numpy</li>
+                        <li>Pandas</li>
+                        <li>Matplotlib</li>
+                        <li>Seaborn</li>
+                        <li>Folium</li>
+                        <li>PyTorch</li>
+                        <li>Keras</li>
+                        <li>Transformers</li>
+                        <li>Selenium</li>
+                        <li>Beautiful Soup</li>
+                        <li>fastAI</li>
+                        <li>AutoKeras</li>
+                    </ul>
+                </li>
+            </ol>
+        </p>
+        <b></b>
+        <h4 style="font-size: large;">
+            Projects
+        </h4>
+        <p>
+            <ol>
+                <li>
+                    NEBDHub & NSDC Transportation Data Science Project(TDSP)
+                    <ul style="font-size: small;">
+                        <li>Leveraged a New York City OpenData Transportation set to analyze and improve road safety.</li>
+                        <li>Skills used: Data Cleaning, Time Series Analysis, Geospatial Analysis & Data Visualization.</li>
+                        <li>Libraries Incorporated: Numpy, Pandas, Matplotlib, Seaborn, Folium.</li>
+                        <li><i><a href="https://github.com/prnvpwr2612/Explorer-TDSP">repository link</a></i></li>
+                    </ul>
+                </li>
+                <li>
+                    Time Series Analysis on Hourly Electricity Consumption
+                    <ul style="font-size: small;">
+                        <li>Conducted time series analysis on electricity consumption in United States data using the Prophet model.</li>
+                        <li>Used Seaborn for Visualizing the plots.</li>
+                        <li>Incorporated holiday effects for enhanced accuracy, showcasing expertise in data analysis and predictive modeling.</li>
+                        <li><i><a href="https://github.com/prnvpwr2612/Time-Series-Analysis-on-Hourly-Electricity-Consumption">repository link</a></i></li>
+                    </ul>
+                </li>
+                <li>
+                    Using Web Scraping to make predictions on Serie A Football Clubs
+                    <ul style="font-size: small;">
+                        <li>Extracted Serie A football stats from <a href="https://fbref.com/en/">a football stats website</a> in format of tables with links.</li>
+                        <li>The stats included offensive performances of a team through a given number of games.</li>
+                        <li>Later, using Random Forest Classifiers, predicted the results of the rest of games in the seasons and checked if our prediction matched the result.</li>
+                        <li><i><a href="https://github.com/prnvpwr2612/Serie-A-Data-Scraping-and-Prediction">repository link</a></i></li>
+                    </ul>
+                </li>
+                <li>
+                    Applying the Concept of AutoEncoder on KMNIST Dataset using Transfer Learning
+                    <ul style="font-size: small;">
+                        <li>An autoencoder is a type of artificial neural network designed for unsupervised learning.</li>
+                        <li>There are 4 common types of AutoEncoders: Vanilla, Multilayer, Convolutional & Variational.</li>
+                        <li>I’ve used these 4 types to train a generative model on the KMNIST dataset present in TFDS.</li>
+                        <li><i><a href="https://github.com/prnvpwr2612/Designing-AutoEncoders-for-KMNIST">repository link</a></i></li>
+                    </ul>
+                </li>
+            </ol>
+        </p>
+        <b></b>
+        <h5 style="font-size: large;">
+            Add Ons
+        </h5>
+        <p>
+            <ul style="font-size: small;">
+                <li>Reading Books related to ML/DS. Here are few of the books I’ve read:</li>
+                <ul>
+                    <li>Data Science from Scratch ~ Joel Grus</li>
+                    <li>AI and Machine Learning for Coders ~ Laurence Moroney</li>
+                    <li>Deep Learning for Coders with fastai & PyTorch ~ Jeremy Howard & Sylvain Gugger</li>
+                    <li>Practical Web Scraping for Data Science ~ Seppe vanden Broucke & Bart Baesens</li>
+                    <li>Generative Deep Learning (In Progress) ~ David Foster</li>
+                </ul>
+                <li>Top 10 in Hackniche 2.0 Hackathon organized by DJS GDSC and DJS Synapse</li>
+                <li>Part of Google Cloud Study Jam 2023</li>
+            </ul>
+        </p>
+        <br>
+        <br>
+        <p style="text-align: center;">
+            <strong>here's some of my pictures...</strong>
+            <br>
+            <br>
+            <img src="LFC.png" alt="Me" height="800" width="450"><img src="LFC2.png" alt="Me2" width="600" height="800"><img src="IMG20230803204802.jpg" height="800" width="600">
+        </p>
+    </body>
 </html>
