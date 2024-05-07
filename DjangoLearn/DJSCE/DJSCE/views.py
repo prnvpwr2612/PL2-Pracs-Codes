@@ -11,8 +11,4 @@ def CourseID(request, courseid):
     return HttpResponse(courseid)
 
 def HomePage(request):
-    data= {
-        'title':"Portfolio|Pranav Pawar",
-        'Achievments':"1st Prize in BioCode Breakers ML Hackathon organised by IIT-BHU"
-    }
-    return render(request,"index.html",data)
+    return render(request,"index.html")
