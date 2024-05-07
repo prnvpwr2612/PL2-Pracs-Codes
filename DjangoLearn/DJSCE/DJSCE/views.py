@@ -10,11 +10,9 @@ def Course(request):
 def CourseID(request, courseid):
     return HttpResponse(courseid)
 
-def Harsh(request):
-    return render(request,"index.html")
 
-def Harsh2(request):
+def HomePage(request):
     data= {
         'title':'Home Page'
     }
-    return render(request,"index.html")
+    return render(request,"index.html",)
