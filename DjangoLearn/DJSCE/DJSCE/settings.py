@@ -67,9 +67,9 @@ TEMPLATES = [
     },
 ]
 
-STATICFILE_DIRS=[
-    BASE_DIR, "Static"
-    ]
+STATICFILES_DIRS = [
+    BASE_DIR, 'Static'
+]
 
 WSGI_APPLICATION = 'DJSCE.wsgi.application'
 
