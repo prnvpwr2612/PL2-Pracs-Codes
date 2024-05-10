@@ -1,4 +1,5 @@
 const buttonel=document.querySelectorAll("button");
+const inputel=document.getElementById("result");
 
 for(i=0;i<buttonel.length;i++){
     buttonel[i].addEventListener("click", () =>{
@@ -23,6 +24,6 @@ function getResult(){
 
 }
 
-function appendValue(){
-    
+function appendValue(buttonvalue){
+
 }
