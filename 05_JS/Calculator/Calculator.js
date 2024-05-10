@@ -1,4 +1,4 @@
-const buttonel=document.querySelectorAll("button");
+const buttonel=document.querySelectorAll(".buttons");
 const inputel=document.getElementById("result");
 
 for(i=0;i<buttonel.length;i++){
@@ -11,19 +11,19 @@ for(i=0;i<buttonel.length;i++){
             getResult();
         }
         else{
-            appendValue();
+            appendValue(buttonvalue);
         }
-    })
+    });
 }
 
 function clearResult(){
-
+    inputel.value="";
 }
 
 function getResult(){
-
+    inputel.value=eval(inputel.value);
 }
 
 function appendValue(buttonvalue){
-
+    inputel.value = inputel.value + buttonvalue;
 }
