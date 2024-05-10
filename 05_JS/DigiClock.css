@@ -8,12 +8,13 @@ body{
     background:url("https://img.freepik.com/premium-photo/soft-blur-nature-background-abstract-modern-website-graphics-with-smooth-gradient-background_532332-41.jpg");
     background-repeat: no-repeat;
     background-size:cover;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow: hidden;
 }
 
 h1{
     font: 700;
     text-align: center;
-    font-family: cursive;
     text-decoration: solid;
 }
 
@@ -36,11 +37,16 @@ h1{
     color: orange;
     align-items: center;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    font-family: cursive;
 }
 
 .clock .text{
     text-transform: uppercase;
     height: 30px;
+    background-color: red;
+    letter-spacing: 2px;
+}
 
+.clock #AMPM{
+    background-color: greenyellow;
+    color: black;
 }
