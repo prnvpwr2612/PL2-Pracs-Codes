@@ -1,29 +1,39 @@
-const buttonel=document.querySelectorAll(".buttons");
-const inputel=document.getElementById("result");
+const clearButtons = document.querySelectorAll(".Clear");
+const operatorButtons = document.querySelectorAll(".Operator");
+const numberButtons = document.querySelectorAll(".number");
+const equalButton = document.querySelector(".equal");
+const decimalButton = document.querySelector(".decimal");
+const inputEl = document.getElementById("result");
 
-for(i=0;i<buttonel.length;i++){
-    buttonel[i].addEventListener("click", () =>{
-        const buttonvalue = buttonel[i].textContent;
-        if(buttonvalue==='C'){
-            clearResult();
-        }
-        else if(buttonvalue==="="){
-            getResult();
-        }
-        else{
-            appendValue(buttonvalue);
-        }
+numberButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        appendValue(button.textContent);
     });
+});
+
+operatorButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        appendValue(button.textContent);
+    });
+});
+
+clearButtons.forEach(button => {
+    button.addEventListener("click", clearResult);
+});
+
+equalButton.addEventListener("click", getResult);
+decimalButton.addEventListener("click", () => {
+    appendValue(decimalButton.textContent);
+});
+
+function clearResult() {
+    inputEl.value = "";
 }
 
-function clearResult(){
-    inputel.value="";
+function getResult() {
+    inputEl.value = eval(inputEl.value);
 }
 
-function getResult(){
-    inputel.value=eval(inputel.value);
-}
-
-function appendValue(buttonvalue){
-    inputel.value = inputel.value + buttonvalue;
+function appendValue(value) {
+    inputEl.value += value;
 }
